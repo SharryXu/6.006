@@ -14,13 +14,13 @@ class TestSelectionSort:
     def test_selection_sort(self):
         arr = [randint(1, 30) for _ in range(30)]
         selection_sort(arr)
-        self.verify_sequence(arr)
+        verify_sequence(arr)
 
         arr = [0, 1, 0, 2, 1]
         selection_sort(arr)
-        self.verify_sequence(arr)
+        verify_sequence(arr)
 
-    @staticmethod
-    def verify_sequence(arr):
-        for i in range(len(arr) - 1):
-            assert arr[i] <= arr[i + 1]
+
+def verify_sequence(arr):
+    for i in range(len(arr) - 1):
+        assert arr[i] <= arr[i + 1]
