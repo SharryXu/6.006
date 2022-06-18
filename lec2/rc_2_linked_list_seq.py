@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class LinkedListNode:
     def __init__(self, x) -> None:
         self.item = x
@@ -10,9 +11,10 @@ class LinkedListNode:
             return self
         assert self.next
         return self.next.later_node(i - 1)
-    
+
     def __str__(self) -> str:
-        return f'({self.item})'
+        return f"({self.item})"
+
 
 class LinkedListSeq:
     def __init__(self) -> None:
@@ -53,10 +55,13 @@ class LinkedListSeq:
     def get_at(self, i):
         node = self.head.later_node(i)
         return node.item
-    
+
     def get_node_at(self, i):
         return self.head.later_node(i)
- 
+
+    def get_first_node(self):
+        return self.head
+
     def get_latest_node(self):
         return self.head.later_node(self.size - 1)
 
