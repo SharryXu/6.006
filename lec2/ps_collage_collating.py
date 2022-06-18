@@ -50,14 +50,20 @@ class OttoShop:
         node_y: DoubleLinkedListNode = self.set[y_i]
         # delete x
         if node_x.prev is None:
-            # head
-            pass
+            self.head = node_x.next
+            self.head.prev = None
         else:
             node_x.prev.next = node_x.next
             node_x.next.prev = node_x.prev
         # insert x before y
-        tmp = node_y.prev
-        node_y.prev.next = node_x
-        node_y.prev = node_x
-        node_x.prev = tmp
-        node_x.next = node_y
+        if node_y.prev is None:
+            node_y.prev = node_x
+            node_x.next = node_y
+            node_x.prev = None
+            self.head = node_x
+        else:
+            tmp = node_y.prev
+            node_y.prev.next = node_x
+            node_y.prev = node_x
+            node_x.prev = tmp
+            node_x.next = node_y

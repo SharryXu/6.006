@@ -26,7 +26,7 @@ class TestCollageCollating:
         shop.import_image(1)
         shop.move_below(3, 5)
         result = shop.display()
-        assert "4 -> 3 -> 5 -> 2" in result
+        assert "1 -> 2 -> 4 -> 5 -> 3" in result
 
     def test_move_below_2(self):
         shop = OttoShop()
@@ -38,4 +38,4 @@ class TestCollageCollating:
         shop.import_image(1)
         shop.move_below(5, 3)
         result = shop.display()
-        assert "4 -> 5 -> 3 -> 2" in result
+        assert "1 -> 2 -> 3 -> 5 -> 4" in result

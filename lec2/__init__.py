@@ -6,5 +6,4 @@ __all__ = ["ArraySeq", "DynamicArraySeq"]
 import pathlib
 import sys
 
-sys.path.append(pathlib.Path(__file__).parent)
-# sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(str(pathlib.Path(__file__).parent))
