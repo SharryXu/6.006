@@ -30,11 +30,17 @@ class ArraySeq:
         """
         Copy array A to array B
 
-        Parameters:
-            i: index of array A
-            n: copy count
-            B: array B
-            j: index of array B
+        :parm i:
+            index of array A
+
+        :parm n:
+            copy count
+
+        :parm B:
+            array B
+
+        :parm j:
+            index of array B
         """
         for k in range(n):
             B[j + k] = self.A[i + k]
@@ -43,11 +49,17 @@ class ArraySeq:
         """
         Copy array A to array B
 
-        Parameters:
-            i: index of array A
-            n: copy count
-            B: array B
-            j: index of array B
+        :parm i:
+            index of array A
+
+        :parm n:
+            copy count
+
+        :parm B:
+            array B
+
+        :parm j:
+            index of array B
         """
 
         for k in range(n - 1, -1, -1):

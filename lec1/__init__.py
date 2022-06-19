@@ -1,4 +1,4 @@
-import os
+import pathlib
 import sys
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+sys.path.append(str(pathlib.Path(__file__).parent))
