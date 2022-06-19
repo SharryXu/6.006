@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 
-from os import getcwd
-from sys import path
-
-from rc_2_linked_list_seq import LinkedListSeq
-from rc_2_set_from_seq import set_from_seq
-
-path.append(getcwd() + "\\6.006\\lec2")
 
 from random import randint
+from typing import Any
+
+from lec2.rc_2_linked_list_seq import LinkedListSeq
+from lec2.rc_2_set_from_seq import set_from_seq
+
+
+class Item:
+    def __init__(self, key: int, value: Any):
+        self.key, self.value = key, value
+
+    def __str__(self) -> str:
+        return f"key: {self.key}, value: {self.value}"
 
 
 class HashTableSet:
@@ -55,7 +60,7 @@ class HashTableSet:
         for i in x:
             self.insert(i)
 
-    def find(self, k):
+    def find(self, k) -> Item:
         h = self._hash(k, len(self.A))
         return self.A[h].find(k)
 
@@ -66,7 +71,7 @@ class HashTableSet:
         self.A[h].insert(x)
         self.size += 1
 
-    def delete(self, k):
+    def delete(self, k) -> Item:
         h = self._hash(k, len(self.A))
         x = self.A[h].delete(k)
         if x is not None:
@@ -98,11 +103,3 @@ class HashTableSet:
         while x:
             yield x
             x = self.find_next(x.key)
-
-
-class Item:
-    def __init__(self, key, value):
-        self.key, self.value = key, value
-
-    def __str__(self) -> str:
-        return f"key: {self.key}, value: {self.value}"
