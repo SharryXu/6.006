@@ -1,13 +1,13 @@
 from lec3.test_selection_sort import verify_sequence
-from lec5.counting_sort import counting_sort
+from lec5.direct_access_sort import direct_access_sort
 
 
-class TestCountingSort:
+class TestDirectAccessSort:
     def test(self):
         arr = [3, 1, 4, 8, 2, 6]
-        counting_sort(arr)
+        direct_access_sort(arr)
         verify_sequence(arr)
 
         arr = [3, 1]
-        counting_sort(arr)
+        direct_access_sort(arr)
         verify_sequence(arr)
