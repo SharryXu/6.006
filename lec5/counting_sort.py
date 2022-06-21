@@ -1,11 +1,12 @@
 def counting_sort(A):
     u = 1 + max([i for i in A])
-    arr = [[]] * u
-    for i in A:
-        arr[i].append(i)
+    # cannot use [[]] * u, that will cause all elements
+    # bind to the same child array
+    arr = [[] for _ in range(u)]
+    for a in A:
+        (arr[a]).append(a)
     j = 0
     for k in range(u):
-        if len(arr[k]) > 0:
-            for x in arr[k]:
-                A[j] = x
-                j += 1
+        for x in arr[k]:
+            A[j] = x
+            j += 1

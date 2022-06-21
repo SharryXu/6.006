@@ -4,7 +4,7 @@ from lec5.counting_sort import counting_sort
 
 class TestCountingSort:
     def test(self):
-        arr = [3, 1, 4, 8, 2, 6]
+        arr = [3, 8, 4, 8, 2, 6]
         counting_sort(arr)
         verify_sequence(arr)
 
