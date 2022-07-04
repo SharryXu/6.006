@@ -1,6 +1,6 @@
 def tuple_sort(A: list[tuple]) -> list[tuple]:
     if len(A) == 0:
-        return []
+        return A
     length = len(A[0]) - 1
     while length >= 0:
         result = []
